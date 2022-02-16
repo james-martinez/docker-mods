@@ -3,18 +3,18 @@
 echo "*** VSCODE Installer ***"
 echo "Checking if vscode is installed"
 
-if ! code -v COMMAND &> /dev/null; then 
+if ! code -v &> /dev/null; then 
     echo "VSCODE not installed, installing now..." 
-    if ! curl -v COMMAND &> /dev/null; then
+    if ! curl --version &> /dev/null; then
         echo "curl not installed, installing now..." 
         apt-get install curl -y
     fi
     curl -sSL https://packages.microsoft.com/keys/microsoft.asc -o microsoft.asc
-    sudo apt-key add microsoft.asc
+    apt-key add microsoft.asc
     rm microsoft.asc
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"  | sudo tee /etc/apt/sources.list.d/vscode.list
-    sudo apt update
-    sudo apt install -y code
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"  | tee /etc/apt/sources.list.d/vscode.list
+    apt update
+    apt install -y code
 else
     echo "vscode already installed, skipping!"
 fi
