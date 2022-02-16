@@ -1,18 +1,16 @@
-#!/usr/bin/with-contenv bash
-
+ #!/usr/bin/with-contenv bash
 echo "*** ARDUINO Installer ***"
 echo "Checking if arduino is installed"
-
-if ! arduino --version COMMAND &> /dev/null; then 
-    echo "ARDUINO not installed, installing now..." 
-    if ! curl -v COMMAND &> /dev/null; then
-        echo "curl not installed, installing now..." 
+if ! arduino --version &> /dev/null; then
+    echo "ARDUINO not installed, installing now..."
+    if ! curl --version  &> /dev/null; then
+        echo "curl not installed, installing now..."
         apt-get install curl -y
     fi
-    curl 'https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz'
-    tar -xz arduino-1.8.19-linux64.tar.xz
-    cd arduino-1.8.19 
-    sudo ./install.sh
+    curl -O 'https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz'
+    tar -xf arduino-1.8.19-linux64.tar.xz
+    cd arduino-1.8.19
+    ./install.sh
 else
     echo "arduino already installed, skipping!"
 fi
