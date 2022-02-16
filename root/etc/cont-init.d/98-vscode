@@ -14,7 +14,6 @@ if ! code -v COMMAND &> /dev/null; then
     rm microsoft.asc
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"  | sudo tee /etc/apt/sources.list.d/vscode.list
     sudo apt update
-    sudo apt --fix-broken install -y
     sudo apt install -y code
 else
     echo "vscode already installed, skipping!"
