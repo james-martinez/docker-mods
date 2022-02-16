@@ -3,8 +3,8 @@ name: Build Image
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  ENDPOINT: "james-martinez/docker-mods/vscode"
-  BRANCH: "webtop-vscode"
+  ENDPOINT: "james-martinez/docker-mods/arduino-ide"
+  BRANCH: "arduino-ide"
 
 jobs:
   build:
