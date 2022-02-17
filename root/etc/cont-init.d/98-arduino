@@ -11,7 +11,7 @@ if ! arduino --version &> /dev/null; then
     tar -xf arduino-1.8.19-linux64.tar.xz
     rm arduino-1.8.19-linux64.tar.xz
     cd arduino-1.8.19
-    sudo ./install.sh
+    ./install.sh
 else
     echo "arduino already installed, skipping!"
 fi
