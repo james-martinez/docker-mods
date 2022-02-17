@@ -7,10 +7,11 @@ if ! arduino --version &> /dev/null; then
         echo "curl not installed, installing now..."
         apt-get install curl -y
     fi
-    curl -O 'https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz'
+    curl -OL 'https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz'
     tar -xf arduino-1.8.19-linux64.tar.xz
+    rm arduino-1.8.19-linux64.tar.xz
     cd arduino-1.8.19
-    ./install.sh
+    sudo ./install.sh
 else
     echo "arduino already installed, skipping!"
 fi
