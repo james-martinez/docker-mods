@@ -1,4 +1,4 @@
- #!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bash
 echo "*** ARDUINO Installer ***"
 echo "Checking if arduino is installed"
 if ! arduino --version &> /dev/null; then
