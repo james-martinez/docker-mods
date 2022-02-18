@@ -5,7 +5,7 @@ if ! brew --version &> /dev/null; then
     echo "HOMEBREW not installed, installing now..."
     apt-get install build-essential procps curl file git -y
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /config/.profile
+    '"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /config/.profile
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
     echo "brew already installed, skipping!"
